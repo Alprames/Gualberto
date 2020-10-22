@@ -1,0 +1,2 @@
+Okay guys greetings, this is the first project I'm submitting to FreeCodeCamp and it's also the first assignment that is given to the students about responsive web design. This tribute will be about one of the most important folklore musicians from my locality, Gualberto Ibarreto, which work made me feel a lot of interest for traditional musics and the cultural roots of the society that surrounds me. 
+I am also from Venezuela, so the name might be a little strange for whoever who's reading this who doesn't speak spanish.
