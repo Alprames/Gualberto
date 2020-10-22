@@ -1,0 +1,74 @@
+/* Global */
+html {
+    font-size:62.5%;
+    font-family:Roboto, Poppins, serif;
+}
+body {
+    font-size: 2rem;
+    line-height: 1.5;
+    max-width: 65vw;
+    margin: auto;
+    color: #3a3a3a;
+    background-color: #f9f9f9;
+    padding: 1rem;
+}
+img {
+    max-width:100%; 
+    height:auto; /*Important for responsive web purposes*/
+}
+/*Headings*/
+h1, h2 {
+    font-family:Roboto;
+}
+h1 {
+    font-size:3.8rem;
+}
+h2 {
+    font-size:3.4rem;
+}
+/*Encabezado*/
+#title a {
+    color: #3a3a3a;
+    text-decoration:none;
+}
+#title a:hover {
+    animation-name:luz-in;
+    animation-duration:300ms;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease-in-out;
+}
+@keyframes luz-in {
+    100% {
+        color:#a9a9a9;
+        display:flex;
+    }
+}
+header {
+    position:relative;
+    margin-top: -2rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center; /* This one snippet is centering my text */
+}
+header p {
+    margin-top:-3.2rem;
+    position:relative;
+}
+/* Image */
+#img-div {
+    background-color:#fff;
+    padding:4rem;
+    border-radius:15px;
+    margin-top:-1rem;
+}
+@media (max-width 800px) {
+    img {
+        width:90rem;
+    }
+}
+#img-caption {
+    text-align:center;
+    font-size:80%;
+    font-style:italic;
+    opacity:.65;
+}
