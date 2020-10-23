@@ -4,17 +4,27 @@ html {
     font-family:Roboto, Poppins, serif;
 }
 body {
+    position:relative;
     font-size: 2rem;
     line-height: 1.5;
-    max-width: 65vw;
-    margin: auto;
+    background-color:fefefe;
+}
+main {
+    position:relative;
+    max-width: 65%;
+    margin: 4rem auto;
     color: #3a3a3a;
     background-color: #f9f9f9;
-    padding: 1rem;
+    padding:0 15%;
+    border-radius: 2rem;
 }
 img {
     max-width:100%; 
     height:auto; /*Important for responsive web purposes*/
+}
+a:visited {
+    color:hsl(0, 0%, 0%);
+    opacity:1;
 }
 /*Headings*/
 h1, h2 {
@@ -27,6 +37,9 @@ h2 {
     font-size:3.4rem;
 }
 /*Encabezado*/
+h1 {
+    margin-bottom:5rem;
+}
 #title a {
     color: #3a3a3a;
     text-decoration:none;
@@ -35,11 +48,11 @@ h2 {
     animation-name:luz-in;
     animation-duration:300ms;
     animation-fill-mode:forwards;
-    animation-timing-function: ease-in-out;
+    animation-timing-function:ease-in-out;
 }
 @keyframes luz-in {
     100% {
-        color:#a9a9a9;
+        color:#ababab;
         display:flex;
     }
 }
@@ -54,9 +67,32 @@ header p {
     margin-top:-3.2rem;
     position:relative;
 }
+h1:hover::after {
+    position:relative;
+    content:"";
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:0.5rem;
+    margin-top:-1rem;
+    margin-bottom:0.5rem;
+    justify-content:center;
+    background-color:#ababab;
+    animation-name:luz-in2;
+    animation-duration:600ms;
+    animation-fill-mode:forwards;
+    animation-timing-function:ease-in-out;
+    opacity:0;
+}
+@keyframes luz-in2 {
+    100% {
+        color:#ababab;
+        opacity:1;
+    }
+}
 /* Image */
 #img-div {
-    background-color:#fff;
+    background-color:#fefefe;
     padding:4rem;
     border-radius:15px;
     margin-top:-1rem;
@@ -71,4 +107,14 @@ header p {
     font-size:80%;
     font-style:italic;
     opacity:.65;
+}
+#img-caption a{
+    color:#3a3a3a;
+    text-decoration:none;
+}
+#img-caption a:hover{
+    animation-name:luz-in;
+    animation-duration:300ms;
+    animation-fill-mode:forwards;
+    text-decoration:none;
 }
