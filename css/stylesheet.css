@@ -4,7 +4,7 @@ html {
     font-family:Roboto, Poppins, serif;
 }
 body {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.5;
     background-color:#fdfdfd;
 }
@@ -16,7 +16,7 @@ body::before {
     z-index: -1;
     background-image:url(../assets/img/background.png); /*fondo fijo, creas un un pseudo elemento que abarque todo el ancho de la pantalla y esté detrás de todo, lo colocas como fijo y listo*/
   }
-main {
+#main {
     position:relative;
     max-width: 65%;
     margin: 4rem auto;
@@ -25,12 +25,11 @@ main {
     padding:0 5%;
     border-radius:1rem;
 }
-
-
 a:visited {
     color:hsl(0, 0%, 0%);
     opacity:1;
 }
+
 /*Headings*/
 h1, h2 {
     font-family:Roboto;
@@ -39,15 +38,28 @@ h1 {
     font-size:3.8rem;
 }
 h2 {
-    font-size:3.4rem;
+    font-size:3rem;
+}
+/*Utilities*/
+.centertext {
+    text-align:center;
 }
 
+/*Header*/
 
-/*Encabezado*/
-
+header {
+    position:relative;
+    margin-top: -2rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center; /* This one snippet is centering my text */
+}
 h1 {
+    font-family:Poppins;
+    font-weight:700;
     margin-bottom:-2.5rem;
-    letter-spacing:.3rem;
+    letter-spacing:.9rem;
+    text-transform:uppercase;
 }
 #title a {
     color: #3a3a3a;
@@ -61,19 +73,9 @@ h1 {
 }
 @keyframes luz-in {
     100% {
-        color:#ababab;
+        color: #1a1a1a;;
         display:flex;
     }
-}
-header {
-    position:relative;
-    margin-top: -2rem;
-    display:flex;
-    flex-direction:column;
-    align-items:center; /* This one snippet is centering my text */
-}
-header p {
-    position:relative;
 }
 h1:hover::after {
     position:relative;
@@ -83,9 +85,9 @@ h1:hover::after {
     width:100%;
     height:0.5rem;
     margin-top:-1rem;
-    margin-bottom:0.5rem;
+    margin-bottom:.5rem;
     justify-content:center;
-    background-color:#ababab;
+    background-color:#e22d3a;
     animation-name:luz-in2;
     animation-duration:600ms;
     animation-fill-mode:forwards;
@@ -94,27 +96,33 @@ h1:hover::after {
 }
 @keyframes luz-in2 {
     100% {
-        color:#ababab;
+        color:#e22d3a;
         opacity:1;
     }
+}
+header p {
+    position:relative;
 }
 
 
 /* Image */
 #img-div {
     display:flex;
+    position:relative;
     flex-direction:column;
-    align-items: center;
+    align-items:center;
     background-color:#fdfdfd;
     padding:4rem;
-    border-radius:10px;
+    border-radius:1rem 1rem 0 0;
     margin-top:-1rem;
 }
 #img-div img {
     max-width:96.7rem;    
-    max-width:100%; 
     height:auto; /*Important for responsive web purposes*/
-    border-radius:1rem;
+    border-radius:1rem 1rem 0 0;
+    display:flex;
+    justify-content:center;
+    width:100%;
 }
 #img-caption {
     text-align:center;
@@ -131,4 +139,62 @@ h1:hover::after {
     animation-duration:300ms;
     animation-fill-mode:forwards;
     text-decoration:none;
+}
+@media (max-width : 450px) {
+    main {
+        width:100%;
+    } 
+}
+/** List **/
+.dots {
+    letter-spacing: 1rem;
+}
+.tribute-info {
+    font-family:Poppins;
+    line-height:1.5;
+}
+.tribute-info h2 {
+    letter-spacing:.4rem;
+}
+.tribute-info ul {
+    display:flex;
+    flex-direction:column;
+    list-style: circle;
+    list-style-position: inside;
+}
+.tribute-info ul li {
+    margin-bottom: 2.5rem;
+}
+/**Footer**/
+.footer {
+    display:flex;
+    flex-direction:column;
+    margin:auto;
+}
+.footer p {
+    margin-bottom:0px;
+}
+#signature {
+    display:inline-block;
+    position:relative;
+    padding-left:0;
+    padding-right:0;
+    left:.85rem;
+    margin-top:-.5rem;
+    margin-bottom:1rem;
+    font-size:1.2rem;
+    letter-spacing:1.2rem;
+    text-decoration:none;
+    color:#000;
+}
+#signature:hover {
+    animation-name:shrink;
+    animation-duration:500ms;
+    animation-fill-mode:forwards;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+@keyframes shrink {
+    100% {
+        letter-spacing:0rem;
+    }
 }
