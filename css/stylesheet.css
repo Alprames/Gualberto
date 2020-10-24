@@ -14,12 +14,13 @@ body::before {
     width:100%;
     height:100%;
     z-index: -1;
-    background-image:url(../assets/img/background.png); /*fondo fijo, creas un un pseudo elemento que abarque todo el ancho de la pantalla y esté detrás de todo, lo colocas como fijo y listo*/
-  }
+    background-image:url(../assets/img/background.png);
+}
 #main {
     position:relative;
-    max-width: 65%;
+    width: 65%;
     margin: 4rem auto;
+    padding: 1.5rem;
     color: #3a3a3a;
     background-color: #f3f3f3;
     padding:0 5%;
@@ -52,17 +53,18 @@ header {
     margin-top: -2rem;
     display:flex;
     flex-direction:column;
-    align-items:center; /* This one snippet is centering my text */
+    align-items:center;
 }
 h1 {
     font-family:Poppins;
     font-weight:700;
-    margin-bottom:-2.5rem;
+    margin-bottom:-2.2rem;
     letter-spacing:.9rem;
     text-transform:uppercase;
+    text-align:center;
 }
 #title a {
-    color: #3a3a3a;
+    color: #4d4d4d;
     text-decoration:none;
 }
 #title a:hover {
@@ -73,7 +75,7 @@ h1 {
 }
 @keyframes luz-in {
     100% {
-        color: #1a1a1a;;
+        color: #3a3a3a;;
         display:flex;
     }
 }
@@ -82,6 +84,7 @@ h1:hover::after {
     content:"";
     display:flex;
     flex-direction:column;
+    top:.25rem;
     width:100%;
     height:0.5rem;
     margin-top:-1rem;
@@ -105,16 +108,16 @@ header p {
 }
 
 
-/* Image */
+/** Image **/
 #img-div {
     display:flex;
     position:relative;
     flex-direction:column;
     align-items:center;
     background-color:#fdfdfd;
-    padding:4rem;
+    padding:1.5rem 4rem;
     border-radius:1rem 1rem 0 0;
-    margin-top:-1rem;
+    margin:-1rem -3rem;
 }
 #img-div img {
     max-width:96.7rem;    
@@ -130,20 +133,14 @@ header p {
     font-style:italic;
     opacity:.65;
 }
-#img-caption a{
+a{
     color:#3a3a3a;
     text-decoration:none;
 }
-#img-caption a:hover{
+a:hover{
     animation-name:luz-in;
     animation-duration:300ms;
     animation-fill-mode:forwards;
-    text-decoration:none;
-}
-@media (max-width : 450px) {
-    main {
-        width:100%;
-    } 
 }
 /** List **/
 .dots {
@@ -165,11 +162,42 @@ header p {
 .tribute-info ul li {
     margin-bottom: 2.5rem;
 }
+/**Quote**/
+#quote {
+    display:flex;
+    flex-direction:column;
+    width:45rem;
+    position:relative;
+    margin: auto;
+    margin-top:-5rem;
+
+}
+blockquote {
+    font-family:Roboto;
+    font-size:1.8rem;
+    font-style:italic;
+}
+blockquote::before {
+    content:"";
+    background-image:url(/assets/icons/comilla.svg);
+    display:block;
+    width:4rem;
+    height:4rem;
+    position:relative;
+    right:5rem;
+    top:2rem;
+}
+#quote p {
+    padding-bottom:4rem;
+}
+h4 {
+    margin-top: -3.5rem;
+}
 /**Footer**/
 .footer {
     display:flex;
     flex-direction:column;
-    margin:auto;
+    align-content: center;
 }
 .footer p {
     margin-bottom:0px;
@@ -177,11 +205,11 @@ header p {
 #signature {
     display:inline-block;
     position:relative;
-    padding-left:0;
-    padding-right:0;
-    left:.85rem;
+    left:1rem;
     margin-top:-.5rem;
+    margin-right:20px;
     margin-bottom:1rem;
+    margin-left:20px;
     font-size:1.2rem;
     letter-spacing:1.2rem;
     text-decoration:none;
@@ -197,4 +225,34 @@ header p {
     100% {
         letter-spacing:0rem;
     }
+}
+/* Media Query */
+@media (max-width: 550px) {
+    h1 {
+      font-size: 4rem;
+      line-height: 1.2;
+    }
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    span {
+        letter-spacing:1.5rem;
+    }
+    #main {
+        width:90%;
+    }
+    #img-div {
+        margin:-1.5rem -2rem;
+    }
+    #img-div img {
+        width:110%;
+    }
+    #img-caption {
+        font-size:1.5rem;
 }
